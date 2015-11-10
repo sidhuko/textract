@@ -8,6 +8,5 @@ Make sure you've installed the [Docker Toolbox](https://www.docker.com/docker-to
 ### npm run docker:test
 Runs the test command within a container
 
-### npm run docker:start
-Send a command within a container, i.e; 
-``` npm run docker 'node index.js' ```
+### npm run docker:ssh
+Access the commandline within the container
