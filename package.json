@@ -62,8 +62,14 @@
     "mocha": "1.9.0",
     "chai": "1.5.0"
   },
+  "config": {
+    "image": "sidhuko/textract:0.0.1"
+  },
   "scripts": {
-     "test": "node_modules/.bin/mocha"
+     "test": "node_modules/.bin/mocha",
+     "docker:test": "npm run docker -- sh -c 'npm run test'",
+     "docker": "docker run --name $npm_package_name --rm --env NODE_ENV=development -v $(pwd):/worker -w /worker ${npm_package_config_image}",
+     "docker:ssh": "docker run --rm --env NODE_ENV=development -v $(pwd):/worker -w /worker -t -i ${npm_package_config_image} /bin/bash"
    },
   "license": "MIT",
   "engines": {
